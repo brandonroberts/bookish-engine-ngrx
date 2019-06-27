@@ -8,8 +8,10 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { storeFreeze } from 'ngrx-store-freeze';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { CoreModule } from '@test-workspace/core';
+import { AuthModule } from '@test-workspace/auth';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,12 +19,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     NxModule.forRoot(),
-    StoreModule.forRoot(
-      {},
-      { metaReducers: !environment.production ? [storeFreeze] : [] }
-    ),
+    StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    CoreModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

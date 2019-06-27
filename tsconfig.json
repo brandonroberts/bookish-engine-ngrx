@@ -16,7 +16,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@test-workspace/core": ["libs/core/src/index.ts"]
+      "@test-workspace/core": ["libs/core/src/index.ts"],
+      "@test-workspace/auth": ["libs/auth/src/index.ts"],
+      "@test-workspace/books": ["libs/books/src/index.ts"],
+      "@test-workspace/shared": ["libs/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -16,6 +16,15 @@
     },
     "core": {
       "tags": []
+    },
+    "auth": {
+      "tags": []
+    },
+    "books": {
+      "tags": []
+    },
+    "shared": {
+      "tags": []
     }
   }
 }
