@@ -13,6 +13,9 @@
     },
     "test-workspace": {
       "tags": []
+    },
+    "core": {
+      "tags": []
     }
   }
 }
