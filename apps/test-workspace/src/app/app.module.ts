@@ -8,12 +8,12 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule, RouterState } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 import { AuthModule } from '@test-workspace/auth';
+import { CoreModule, ROOT_REDUCERS, metaReducers } from '@test-workspace/core';
 
-import { ROOT_REDUCERS, metaReducers } from './reducers';
-
-import { CoreModule, AppComponent } from '@test-workspace/core';
+import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -33,7 +33,7 @@ import { AppRoutingModule } from './app-routing.module';
      * based application.
      */
     StoreModule.forRoot(ROOT_REDUCERS, {
-      metaReducers,
+      metaReducers: environment.production ? metaReducers : [],
       runtimeChecks: {
         strictStateImmutability: true,
         strictActionImmutability: true,

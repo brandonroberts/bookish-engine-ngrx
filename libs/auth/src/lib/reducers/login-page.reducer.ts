@@ -1,4 +1,4 @@
-import { AuthApiActions, LoginPageActions } from '..//actions';
+import { AuthApiActions, LoginPageActions } from '../actions';
 import { createReducer, on } from '@ngrx/store';
 
 export interface State {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Credentials } from '..//models';
-import * as fromAuth from '..//reducers';
-import { LoginPageActions } from '..//actions';
+import { Credentials } from '../models';
+import * as fromAuth from '../reducers';
+import { LoginPageActions } from '../actions';
 
 @Component({
   selector: 'bc-login-page',
@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit {
   pending$ = this.store.pipe(select(fromAuth.getLoginPagePending));
   error$ = this.store.pipe(select(fromAuth.getLoginPageError));
 
-  constructor(private store: Store<fromAuth.State>) {}
+  constructor(private store: Store<fromAuth.AuthState>) {}
 
   ngOnInit() {}
 

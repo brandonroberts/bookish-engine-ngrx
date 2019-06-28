@@ -1,9 +1,9 @@
-import { reducer } from '..//reducers/login-page.reducer';
-import * as fromLoginPage from '..//reducers/login-page.reducer';
+import { reducer } from '../reducers/login-page.reducer';
+import * as fromLoginPage from '../reducers/login-page.reducer';
 
-import { AuthApiActions, LoginPageActions } from '..//actions';
+import { AuthApiActions, LoginPageActions } from '../actions';
 
-import { Credentials, User } from '..//models';
+import { Credentials, User } from '../models';
 
 describe('LoginPageReducer', () => {
   describe('undefined action', () => {

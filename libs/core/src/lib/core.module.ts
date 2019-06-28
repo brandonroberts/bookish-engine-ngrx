@@ -11,13 +11,11 @@ import {
   ToolbarComponent,
 } from './components';
 import {
-  AppComponent,
   NotFoundPageComponent,
 } from './containers';
 import { RouterEffects, UserEffects } from './effects';
 
 export const COMPONENTS = [
-  AppComponent,
   NotFoundPageComponent,
   LayoutComponent,
   NavItemComponent,

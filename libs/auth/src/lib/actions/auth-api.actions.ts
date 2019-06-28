@@ -1,5 +1,5 @@
 import { props, createAction } from '@ngrx/store';
-import { User } from '..//models';
+import { User } from '../models';
 
 export const loginSuccess = createAction(
   '[Auth/API] Login Success',

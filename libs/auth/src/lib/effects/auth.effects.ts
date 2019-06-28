@@ -8,10 +8,10 @@ import {
   LoginPageActions,
   AuthActions,
   AuthApiActions,
-} from '..//actions';
-import { Credentials } from '..//models';
-import { AuthService } from '..//services';
-import { LogoutConfirmationDialogComponent } from '..//components';
+} from '../actions';
+import { Credentials } from '../models';
+import { AuthService } from '../services';
+import { LogoutConfirmationDialogComponent } from '../components';
 import { UserActions } from '@test-workspace/core';
 
 @Injectable()

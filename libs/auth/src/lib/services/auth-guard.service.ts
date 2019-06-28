@@ -3,14 +3,14 @@ import { CanActivate } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-import { AuthApiActions } from '..//actions';
-import * as fromAuth from '..//reducers';
+import { AuthApiActions } from '../actions';
+import * as fromAuth from '../reducers';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private store: Store<fromAuth.State>) {}
+  constructor(private store: Store<fromAuth.AuthState>) {}
 
   canActivate(): Observable<boolean> {
     return this.store.pipe(

@@ -4,10 +4,8 @@ import {
   ActionReducer,
   MetaReducer,
   Action,
-  combineReducers,
   ActionReducerMap,
 } from '@ngrx/store';
-import { environment } from '../../environments/environment';
 import * as fromRouter from '@ngrx/router-store';
 
 /**
@@ -24,7 +22,7 @@ import { InjectionToken } from '@angular/core';
  * As mentioned, we treat each reducer like a table in a database. This means
  * our top level state interface is just a map of keys to inner state types.
  */
-export interface State {
+export interface CoreState {
   layout: fromLayout.State;
   router: fromRouter.RouterReducerState<any>;
 }
@@ -35,7 +33,7 @@ export interface State {
  * and the current or initial state and return a new immutable state.
  */
 export const ROOT_REDUCERS = new InjectionToken<
-  ActionReducerMap<State, Action>
+  ActionReducerMap<CoreState, Action>
 >('Root reducers token', {
   factory: () => ({
     layout: fromLayout.reducer,
@@ -44,7 +42,7 @@ export const ROOT_REDUCERS = new InjectionToken<
 });
 
 // console.log all actions
-export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
+export function logger(reducer: ActionReducer<CoreState>): ActionReducer<CoreState> {
   return (state, action) => {
     const result = reducer(state, action);
     console.groupCollapsed(action.type);
@@ -62,14 +60,12 @@ export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
  * the root meta-reducer. To add more meta-reducers, provide an array of meta-reducers
  * that will be composed to form the root meta-reducer.
  */
-export const metaReducers: MetaReducer<State>[] = !environment.production
-  ? [logger]
-  : [];
+export const metaReducers: MetaReducer<CoreState>[] = [logger];
 
 /**
  * Layout Reducers
  */
-export const getLayoutState = createFeatureSelector<State, fromLayout.State>(
+export const getLayoutState = createFeatureSelector<CoreState, fromLayout.State>(
   'layout'
 );
 

@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 
-import { UserEffects } from '@example-app/core/effects';
-import { UserActions } from '@example-app/core/actions';
+import { UserEffects } from '../effects';
+import { UserActions } from '../actions';
 
 describe('UserEffects', () => {
   let effects: UserEffects;

@@ -3,15 +3,15 @@ import { MatInputModule, MatCardModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Store } from '@ngrx/store';
-import { LoginPageComponent } from '..//containers';
-import { LoginFormComponent } from '..//components';
-import * as fromAuth from '..//reducers';
-import { LoginPageActions } from '..//actions';
+import { LoginPageComponent } from '../containers';
+import { LoginFormComponent } from '../components';
+import * as fromAuth from '../reducers';
+import { LoginPageActions } from '../actions';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 describe('Login Page', () => {
   let fixture: ComponentFixture<LoginPageComponent>;
-  let store: MockStore<fromAuth.State>;
+  let store: MockStore<fromAuth.AuthState>;
   let instance: LoginPageComponent;
 
   beforeEach(() => {

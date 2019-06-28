@@ -4,7 +4,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { of } from 'rxjs';
 
-import { RouterEffects } from '@example-app/core/effects';
+import { RouterEffects } from '../effects';
 
 describe('RouterEffects', () => {
   let effects: RouterEffects;
