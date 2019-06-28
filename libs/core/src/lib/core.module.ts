@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { EffectsModule } from '@ngrx/effects';
 
 import { MaterialModule } from './material';
 import {
@@ -13,6 +14,7 @@ import {
   AppComponent,
   NotFoundPageComponent,
 } from './containers';
+import { RouterEffects, UserEffects } from './effects';
 
 export const COMPONENTS = [
   AppComponent,
@@ -24,7 +26,15 @@ export const COMPONENTS = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule, MaterialModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    MaterialModule,
+    EffectsModule.forFeature([
+      RouterEffects,
+      UserEffects
+    ])
+  ],
   declarations: COMPONENTS,
   exports: COMPONENTS,
 })
