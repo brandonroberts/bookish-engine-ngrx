@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 
-import { MaterialModule } from './material';
+import { SharedModule } from '@test-workspace/shared';
 import {
   LayoutComponent,
   NavItemComponent,
@@ -27,7 +27,7 @@ export const COMPONENTS = [
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule,
+    SharedModule,
     EffectsModule.forFeature([
       RouterEffects,
       UserEffects

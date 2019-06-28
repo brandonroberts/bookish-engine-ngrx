@@ -21,8 +21,8 @@ import {
 import { BookEffects, CollectionEffects } from './effects';
 
 import { reducers } from './reducers';
-import { MaterialModule } from './material';
-import { PipesModule } from '@test-workspace/shared';
+
+import { SharedModule, PipesModule } from '@test-workspace/shared';
 
 export const COMPONENTS = [
   BookAuthorsComponent,
@@ -42,7 +42,7 @@ export const CONTAINERS = [
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
+    SharedModule,
     BooksRoutingModule,
 
     /**

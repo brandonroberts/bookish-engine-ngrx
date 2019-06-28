@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { SharedModule } from '@test-workspace/shared';
+
 import { LoginPageComponent } from './containers';
 import {
   LoginFormComponent,
@@ -11,7 +13,6 @@ import {
 
 import { AuthEffects } from './effects';
 import { reducers } from './reducers';
-import { MaterialModule } from './material';
 import { AuthRoutingModule } from './auth-routing.module';
 
 export const COMPONENTS = [
@@ -24,7 +25,7 @@ export const COMPONENTS = [
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MaterialModule,
+    SharedModule,
     AuthRoutingModule,
     StoreModule.forFeature('auth', reducers),
     EffectsModule.forFeature([AuthEffects]),
