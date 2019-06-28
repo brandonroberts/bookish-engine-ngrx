@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 
-import { LayoutActions } from '@test-workspace/core';
+import { LayoutActions } from '../actions';
 
 export interface State {
   showSidenav: boolean;

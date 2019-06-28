@@ -1,14 +1,15 @@
-import { Book } from '@test-workspace/books/models';
+import { Book } from '@test-workspace/core';
 import {
   createSelector,
   createFeatureSelector,
   combineReducers,
   Action,
 } from '@ngrx/store';
+import { CoreState } from '@test-workspace/core';
+
 import * as fromSearch from './search.reducer';
 import * as fromBooks from './books.reducer';
 import * as fromCollection from './collection.reducer';
-import * as fromRoot from '@test-workspace/reducers';
 
 export interface BooksState {
   search: fromSearch.State;
@@ -16,7 +17,7 @@ export interface BooksState {
   collection: fromCollection.State;
 }
 
-export interface State extends fromRoot.State {
+export interface State extends CoreState {
   books: BooksState;
 }
 

@@ -5,17 +5,16 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MatCardModule, MatInputModule } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { PipesModule } from '@test-workspace/shared';
 
-import { CollectionPageActions } from '@test-workspace/books/actions';
+import { CollectionPageActions } from '../actions';
 import {
   BookAuthorsComponent,
   BookPreviewComponent,
   BookPreviewListComponent,
-} from '@test-workspace/books/components';
-import { CollectionPageComponent } from '@test-workspace/books/containers';
-import * as fromBooks from '@test-workspace/books/reducers';
-import { AddCommasPipe } from '@test-workspace/shared/pipes/add-commas.pipe';
-import { EllipsisPipe } from '@test-workspace/shared/pipes/ellipsis.pipe';
+} from '../components';
+import { CollectionPageComponent } from '../containers';
+import * as fromBooks from '../reducers';
 
 describe('Collection Page', () => {
   let fixture: ComponentFixture<CollectionPageComponent>;
@@ -29,14 +28,13 @@ describe('Collection Page', () => {
         MatCardModule,
         MatInputModule,
         RouterTestingModule,
+        PipesModule
       ],
       declarations: [
         CollectionPageComponent,
         BookPreviewListComponent,
         BookPreviewComponent,
         BookAuthorsComponent,
-        AddCommasPipe,
-        EllipsisPipe,
       ],
       providers: [
         provideMockStore({

@@ -8,7 +8,7 @@ export const routes: Routes = [
   { path: '', redirectTo: '/books', pathMatch: 'full' },
   {
     path: 'books',
-    loadChildren: '@test-workspace/books/books.module#BooksModule',
+    loadChildren: () => import('@test-workspace/books').then(mod => mod.BooksModule),
     canActivate: [AuthGuard],
   },
   {

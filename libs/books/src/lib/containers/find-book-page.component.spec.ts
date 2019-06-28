@@ -11,17 +11,17 @@ import {
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
-import { FindBookPageActions } from '@test-workspace/books/actions';
+import { FindBookPageActions } from '../actions';
 import {
   BookAuthorsComponent,
   BookPreviewComponent,
   BookPreviewListComponent,
   BookSearchComponent,
-} from '@test-workspace/books/components';
-import { FindBookPageComponent } from '@test-workspace/books/containers';
-import * as fromBooks from '@test-workspace/books/reducers';
-import { AddCommasPipe } from '@test-workspace/shared/pipes/add-commas.pipe';
-import { EllipsisPipe } from '@test-workspace/shared/pipes/ellipsis.pipe';
+} from '../components';
+import { FindBookPageComponent } from '../containers';
+import * as fromBooks from '../reducers';
+import { PipesModule } from '@test-workspace/shared';
+
 
 describe('Find Book Page', () => {
   let fixture: ComponentFixture<FindBookPageComponent>;
@@ -37,6 +37,7 @@ describe('Find Book Page', () => {
         MatCardModule,
         MatProgressSpinnerModule,
         ReactiveFormsModule,
+        PipesModule
       ],
       declarations: [
         FindBookPageComponent,
@@ -44,8 +45,6 @@ describe('Find Book Page', () => {
         BookPreviewComponent,
         BookPreviewListComponent,
         BookAuthorsComponent,
-        AddCommasPipe,
-        EllipsisPipe,
       ],
       providers: [
         provideMockStore({

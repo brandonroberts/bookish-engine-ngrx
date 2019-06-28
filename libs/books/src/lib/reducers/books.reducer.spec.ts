@@ -1,12 +1,12 @@
-import { reducer } from '@test-workspace/books/reducers/books.reducer';
-import * as fromBooks from '@test-workspace/books/reducers/books.reducer';
+import { reducer } from '../reducers/books.reducer';
+import * as fromBooks from '../reducers/books.reducer';
 import {
   BooksApiActions,
   BookActions,
   ViewBookPageActions,
   CollectionApiActions,
-} from '@test-workspace/books/actions';
-import { Book, generateMockBook } from '@test-workspace/books/models';
+} from '../actions';
+import { Book, generateMockBook } from '@test-workspace/core';
 
 describe('BooksReducer', () => {
   const book1 = generateMockBook();

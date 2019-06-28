@@ -1,7 +1,7 @@
 import {
   BooksApiActions,
   FindBookPageActions,
-} from '@test-workspace/books/actions';
+} from '../actions';
 import { createReducer, on } from '@ngrx/store';
 
 export interface State {

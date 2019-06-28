@@ -6,8 +6,8 @@ import {
   BooksApiActions,
   CollectionApiActions,
   ViewBookPageActions,
-} from '@test-workspace/books/actions';
-import { Book } from '@test-workspace/books/models';
+} from '../actions';
+import { Book } from '@test-workspace/core';
 
 /**
  * @ngrx/entity provides a predefined interface for handling

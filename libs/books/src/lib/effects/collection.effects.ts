@@ -8,9 +8,8 @@ import {
   CollectionApiActions,
   CollectionPageActions,
   SelectedBookPageActions,
-} from '@test-workspace/books/actions';
-import { Book } from '@test-workspace/books/models';
-import { BookStorageService } from '@test-workspace/core/services';
+} from '../actions';
+import { Book, BookStorageService } from '@test-workspace/core';
 
 @Injectable()
 export class CollectionEffects {

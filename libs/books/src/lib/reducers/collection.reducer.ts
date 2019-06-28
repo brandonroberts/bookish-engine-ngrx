@@ -3,7 +3,7 @@ import { createReducer, on } from '@ngrx/store';
 import {
   CollectionApiActions,
   CollectionPageActions,
-} from '@test-workspace/books/actions';
+} from '../actions';
 
 export interface State {
   loaded: boolean;

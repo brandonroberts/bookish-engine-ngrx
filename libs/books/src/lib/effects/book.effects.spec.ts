@@ -8,10 +8,9 @@ import { Observable } from 'rxjs';
 import {
   BooksApiActions,
   FindBookPageActions,
-} from '@test-workspace/books/actions';
-import { BookEffects } from '@test-workspace/books/effects';
-import { Book } from '@test-workspace/books/models';
-import { GoogleBooksService } from '@test-workspace/core/services/google-books.service';
+} from '../actions';
+import { BookEffects } from '../effects';
+import { GoogleBooksService, Book } from '@test-workspace/core';
 
 describe('BookEffects', () => {
   let effects: BookEffects;

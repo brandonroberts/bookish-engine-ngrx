@@ -76,6 +76,7 @@ import { AppRoutingModule } from './app-routing.module';
     EffectsModule.forRoot([]),
     CoreModule,
   ],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

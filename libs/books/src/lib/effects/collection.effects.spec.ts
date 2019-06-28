@@ -4,13 +4,13 @@ import {
   CollectionApiActions,
   CollectionPageActions,
   SelectedBookPageActions,
-} from '@test-workspace/books/actions';
-import { CollectionEffects } from '@test-workspace/books/effects';
-import { Book } from '@test-workspace/books/models';
+} from '../actions';
+import { CollectionEffects } from '../effects';
+import { Book } from '@test-workspace/core';
 import {
   BookStorageService,
   LOCAL_STORAGE_TOKEN,
-} from '@test-workspace/core/services';
+} from '@test-workspace/core';
 import { Actions } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { cold, hot } from 'jasmine-marbles';

@@ -11,12 +11,11 @@ import {
   takeUntil,
 } from 'rxjs/operators';
 
-import { Book } from '@test-workspace/books/models';
+import { Book, GoogleBooksService } from '@test-workspace/core';
 import {
   BooksApiActions,
   FindBookPageActions,
-} from '@test-workspace/books/actions';
-import { GoogleBooksService } from '@test-workspace/core/services/google-books.service';
+} from '../actions';
 
 /**
  * Effects offer a way to isolate and easily test side-effects within your

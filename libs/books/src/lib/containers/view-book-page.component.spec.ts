@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+import { PipesModule } from '@test-workspace/shared';
 
 import { Store } from '@ngrx/store';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
@@ -9,12 +10,11 @@ import { MatCardModule } from '@angular/material';
 import {
   BookAuthorsComponent,
   BookDetailComponent,
-} from '@test-workspace/books/components';
-import { SelectedBookPageComponent } from '@test-workspace/books/containers';
-import { ViewBookPageComponent } from '@test-workspace/books/containers';
-import { ViewBookPageActions } from '@test-workspace/books/actions';
-import * as fromBooks from '@test-workspace/books/reducers';
-import { AddCommasPipe } from '@test-workspace/shared/pipes/add-commas.pipe';
+} from '../components';
+import { SelectedBookPageComponent } from '../containers';
+import { ViewBookPageComponent } from '../containers';
+import { ViewBookPageActions } from '../actions';
+import * as fromBooks from '../reducers';
 
 describe('View Book Page', () => {
   let fixture: ComponentFixture<ViewBookPageComponent>;
@@ -24,7 +24,7 @@ describe('View Book Page', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [MatCardModule],
+      imports: [MatCardModule, PipesModule],
       providers: [
         {
           provide: ActivatedRoute,
@@ -37,7 +37,6 @@ describe('View Book Page', () => {
         SelectedBookPageComponent,
         BookDetailComponent,
         BookAuthorsComponent,
-        AddCommasPipe,
       ],
     });
 

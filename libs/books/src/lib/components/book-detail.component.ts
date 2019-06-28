@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Book } from '@test-workspace/books/models';
+import { Book } from '@test-workspace/core';
 
 @Component({
   selector: 'bc-book-detail',

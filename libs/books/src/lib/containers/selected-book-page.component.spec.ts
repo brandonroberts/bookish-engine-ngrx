@@ -4,16 +4,16 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { Book, generateMockBook } from '@test-workspace/core';
+import { PipesModule } from '@test-workspace/shared';
 
-import { SelectedBookPageActions } from '@test-workspace/books/actions';
+import { SelectedBookPageActions } from '../actions';
 import {
   BookAuthorsComponent,
   BookDetailComponent,
-} from '@test-workspace/books/components';
-import { SelectedBookPageComponent } from '@test-workspace/books/containers';
-import { Book, generateMockBook } from '@test-workspace/books/models';
-import * as fromBooks from '@test-workspace/books/reducers';
-import { AddCommasPipe } from '@test-workspace/shared/pipes/add-commas.pipe';
+} from '../components';
+import { SelectedBookPageComponent } from '../containers';
+import * as fromBooks from '../reducers';
 
 describe('Selected Book Page', () => {
   let fixture: ComponentFixture<SelectedBookPageComponent>;
@@ -22,12 +22,11 @@ describe('Selected Book Page', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [NoopAnimationsModule, MatCardModule],
+      imports: [NoopAnimationsModule, MatCardModule, PipesModule],
       declarations: [
         SelectedBookPageComponent,
         BookDetailComponent,
         BookAuthorsComponent,
-        AddCommasPipe,
       ],
       providers: [provideMockStore()],
     });
